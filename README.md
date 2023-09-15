@@ -1,6 +1,7 @@
 # kompo
 
 ![./kompo..png](./Kompo..png)
+
 Kompo will do these things:
 
 - Create (generate) a custom docker-compose file (like Kustomise but for Docker Compose)
