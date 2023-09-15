@@ -2,5 +2,6 @@
 
 Kompo will do these things:
 
-- Create (generate) custom docker-compose file (like Kustomise but for Docker Compose)
-- Covnert from docker-compose to Helm chart (pure or with Kustomise)
+- Create (generate) a custom docker-compose file (like Kustomise but for Docker Compose)
+- Convert from docker-compose to Helm chart (pure or with Kustomise)
+- Convert from helm to docker-compose
