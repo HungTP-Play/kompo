@@ -13,7 +13,7 @@ type KompoOption struct {
 	Reserve    bool   // Default = false
 }
 
-func KompoModeValidation(mode string) error {
+func ValidateKompoMode(mode string) (bool, error) {
 	modes := []string{
 		"apply",
 		"helm",
@@ -22,14 +22,14 @@ func KompoModeValidation(mode string) error {
 
 	for i := 0; i < len(modes); i++ {
 		if modes[i] == strings.ToLower(mode) {
-			return nil
+			return true, nil
 		}
 	}
 
-	return errors.New("[Kompo] -- Invalid Mode")
+	return false, errors.New("[Kompo] -- Invalid Mode")
 }
 
-func KompoK8sSupportedVersionValidator(k8sVersion string) error {
+func ValidateKompoK8sSupportedVersion(k8sVersion string) (bool, error) {
 	versions := []string{
 		"1.24",
 		"1.25",
@@ -40,9 +40,9 @@ func KompoK8sSupportedVersionValidator(k8sVersion string) error {
 
 	for i := 0; i < len(versions); i++ {
 		if versions[i] == strings.ToLower(k8sVersion) {
-			return nil
+			return true, nil
 		}
 	}
 
-	return errors.New("[Kompo] -- Unsupported K8s Version")
+	return false, errors.New("[Kompo] -- Unsupported K8s Version")
 }
